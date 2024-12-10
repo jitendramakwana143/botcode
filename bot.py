@@ -16,6 +16,10 @@ async def about(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def services(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Our Services:  \n- Web Development \n- Digital Marketing \n- SEO Optimization \n- Graphic Designing \n- Web Hosting")
 
+async def website(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("Here are some website demos for your reference:\n 1. [Tradify Me](https://tradifyme.com/)\n \nFor more website demos or custom references, feel free to contact us. Send us a message at @StuckGrow.")
+
+
 # Command to handle '/contact'
 async def contact(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Message for Services: @StuckGrow")
@@ -27,6 +31,7 @@ async def help(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/start - Start the bot\n"
         "/about - Learn about our company\n"
         "/services - Explore our services\n"
+        "/website-demo - Check some demo websites for reference\n"
         "/contact - Get in touch with us\n"
         "/help - Show this help message"
     )
@@ -51,6 +56,7 @@ def main():
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("about", about))
     application.add_handler(CommandHandler("services", services))
+    application.add_handler(CommandHandler("website", website))
     application.add_handler(CommandHandler("contact", contact))
     application.add_handler(CommandHandler("help", help))  # Add the /help command handler
 
